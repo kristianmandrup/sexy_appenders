@@ -1,5 +1,10 @@
 == Sexy appenders
 
+IMPORTANT: 
+Version: Pre-aplha (Does not work yet!)
+
+As of March 1. 2010, some major refactoring is planned, so until I let you know, this is a work in progress and might not work at all for some time... 
+
 Note: 
 - Originally extracted from magic_tracer since I viewed that they had some generic utility value which could be reused elsewhere.
 - The magic_tracer was designed to output tracing logs to multiple channels. 
