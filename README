@@ -1,0 +1,25 @@
+== Sexy appenders
+
+Note: 
+- Originally extracted from magic_tracer since I viewed that they had some generic utility value which could be reused elsewhere.
+- The magic_tracer was designed to output tracing logs to multiple channels. 
+
+=== Formats
+Sexy appenders let you target various formats and channels for any kind of logging output. 
+
+=== Content wrappers
+Each appender format has a content_wrapper, essentially a template with a placeholder for inserting the logging statements somewhere "in the middle". 
+Fx for XML
+
+<?xml version="1.0" encoding="UTF-8"?>
+  <root>
+    # appended lines here
+  </root>
+
+=== Channels
+The appenders can target different channels, such as a File, a Socket, Database or a Web Service etc.
+
+
+
+
+ 
