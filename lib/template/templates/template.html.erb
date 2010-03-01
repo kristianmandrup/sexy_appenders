@@ -1,0 +1,18 @@
+<div class="method title"><%= context.full_name %></div>
+<div class="method body">
+  <div class="begin">
+    <div class="name"><%= context.full_name %> :: BEGIN</div>
+    <div class="time start"><%= context[:time_start] %></div>
+    <div class="arguments">
+      <div class="args"><%= context.args %> </div>
+      #block#
+    </div>
+  </div>
+---- SPLIT
+  <div class="end">
+    <div class="name"><%= context.full_name %> :: END</div>
+    <div class="time end"><%= context[:time_end] %></div>
+    <div class="time passed"><%= context[:time_passed] %></div>          
+    <div class="result"><%= context.result %></div>
+  </div>
+</div>

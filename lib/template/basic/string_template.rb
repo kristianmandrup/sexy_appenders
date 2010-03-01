@@ -2,12 +2,7 @@ module Tracing
   module Template 
     class String < Base
       def before_template(context)                  
-        template = <<-EOF
-      <<= <%= context.full_name %> : BEGIN
-      -----------------------------------------------
-      <%= context.args %>
-      ===============================================
-      EOF
+        template = File.read('templates/template.text.erb').top
       end
 
       def before_block_template 
@@ -18,12 +13,7 @@ module Tracing
       end
 
       def end_template(context) 
-        template = <<-EOF
-      <<= <%= context.full_name %> : END
-      -----------------------------------------------
-      <%= context.result %>
-      ===============================================
-      EOF
+        template = File.read('templates/template.text.erb').bottom        
       end  
     end
   end

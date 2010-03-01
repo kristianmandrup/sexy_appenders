@@ -2,14 +2,7 @@ module Tracing
   module Template
     class Xml < Base
       def before_template(context)
-        template = <<-EOF
-      <method name="<%= context.full_name %>">
-        <time point="start"><%= context[:time_start] %></time>    
-        <modules><%= context.full_name %></modules>
-        <class><%= context.cls_name %></class>
-        <args><%= context.args %></args>
-        #block#
-      EOF
+        template = File.read('templates/template.xml.erb').top
       end
 
       def before_block_template 
@@ -20,12 +13,7 @@ module Tracing
 
       def end_template(context) 
         result = context[:result]
-        template = <<-EOF
-        <time point="end"><%= context[:time_end] %></time>          
-        <time point="passed"><%= context[:time_passed] %></time>    
-        <result><%= context.result %></result>
-      </method>
-      EOF
+        template = File.read('templates/template.xml.erb').bottom        
       end
 
       # override
